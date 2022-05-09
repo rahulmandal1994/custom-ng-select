@@ -1,17 +1,17 @@
 <hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<p>Start editing to see some magic happen :)</p>
 <form [formGroup]="bioSection">
-   <div style="width:240px">
-      <ng-select [items]="cities"
+  <div style="width:240px" class="errormassage">
+    <ng-select
+      [items]="cities"
       bindLabel="name"
       placeholder="Select value"
       formControlName="firstName"
-      >
+    >
     </ng-select>
-   </div>
-  <p>
-      Selected city: {{selectedCity | json}}
-  </p>
+    <div class="invalid-feedback">
+      <div>Supplier is required</div>
+    </div>
+  </div>
+  <p>Selected city: {{ selectedCity | json }}</p>
 </form>

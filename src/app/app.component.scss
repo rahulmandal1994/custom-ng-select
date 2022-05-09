@@ -4,6 +4,7 @@ p {
 ::ng-deep.ng-select .ng-select-container {
   border-width: 0 0 1px;
   width: 200px;
+  border-color: red;
 }
 ::ng-deep.ng-select.ng-select-focused:not(.ng-select-opened)
   > .ng-select-container {
@@ -16,4 +17,7 @@ p {
   background-size: 10px 14px;
   margin-top: 2px;
   opacity: 0.4;
+}
+::ng-deep .ng-select .ng-select-container .ng-value-container .ng-placeholder {
+  color: red;
 }
