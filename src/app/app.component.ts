@@ -1,5 +1,5 @@
 import { Component, VERSION } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'my-app',
@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class AppComponent {
   constructor(private fb: FormBuilder) {
     this.bioSection = this.fb.group({
-      firstName: [null],
+      firstName: [null,Validators.required],
     });
     this.bioSection.controls['firstName'].setValue({ id: 1, name: 'Vilnius' });
   }

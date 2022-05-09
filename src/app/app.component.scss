@@ -4,7 +4,7 @@ p {
 ::ng-deep.ng-select .ng-select-container {
   border-width: 0 0 1px;
   width: 200px;
-  border-color: red;
+  border-radius: 0px;
 }
 ::ng-deep.ng-select.ng-select-focused:not(.ng-select-opened)
   > .ng-select-container {
@@ -18,6 +18,12 @@ p {
   margin-top: 2px;
   opacity: 0.4;
 }
-::ng-deep .ng-select .ng-select-container .ng-value-container .ng-placeholder {
+.errorContainer::ng-deep.ng-select .ng-select-container{
+  border-color: red;
+}
+.errorPlaceholder::ng-deep .ng-select .ng-select-container .ng-value-container .ng-placeholder {
+  color: red;
+}
+.errorMassage {
   color: red;
 }

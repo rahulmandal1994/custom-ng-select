@@ -1,7 +1,14 @@
 <hello name="{{ name }}"></hello>
 <p>Start editing to see some magic happen :)</p>
 <form [formGroup]="bioSection">
-  <div style="width:240px" class="errormassage">
+  <div
+    style="width:240px"
+    [ngClass]="
+      bioSection.get('firstName').invalid && bioSection.get('firstName').touched
+        ? 'errorContainer errorPlaceholder'
+        : ''
+    "
+  >
     <ng-select
       [items]="cities"
       bindLabel="name"
@@ -9,9 +16,16 @@
       formControlName="firstName"
     >
     </ng-select>
-    <div class="invalid-feedback">
-      <div>Supplier is required</div>
+    <div
+      *ngIf="
+        bioSection.get('firstName').invalid &&
+        bioSection.get('firstName').touched
+      "
+      class="errorMassage"
+    >
+      <div *ngIf="!!bioSection.get('firstName').hasError('required')">
+        Supplier is required
+      </div>
     </div>
   </div>
-  <p>Selected city: {{ selectedCity | json }}</p>
 </form>
