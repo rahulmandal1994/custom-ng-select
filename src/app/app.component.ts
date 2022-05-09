@@ -9,9 +9,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AppComponent {
   constructor(private fb: FormBuilder) {
     this.bioSection = this.fb.group({
-      firstName: [null,Validators.required],
+      firstName: [null, Validators.required],
     });
-    this.bioSection.controls['firstName'].setValue({ id: 1, name: 'Vilnius' });
+    //this.bioSection.controls['firstName'].setValue({ id: 1, name: 'Vilnius' });
   }
   bioSection: FormGroup;
   name = 'Angular ' + VERSION.major;
